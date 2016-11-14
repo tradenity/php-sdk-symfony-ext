@@ -6,7 +6,7 @@
  * Time: 11:29 PM
  */
 
-namespace Tradenity\SDK\Ext\Symfony\Controller\Listeners;
+namespace Tradenity\SDK\Ext\Symfony\Session;
 
 use Tradenity\SDK\Http\SessionIdAccessor;
 use Symfony\Component\HttpFoundation\Request;
