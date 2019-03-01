@@ -8,7 +8,7 @@
 
 namespace Tradenity\SDK\Ext\Symfony\Session;
 
-use Tradenity\SDK\Http\SessionIdAccessor;
+use Tradenity\SDK\SessionIdAccessor;
 use Symfony\Component\HttpFoundation\Request;
 
 class SymfonySessionIdAccessor implements SessionIdAccessor

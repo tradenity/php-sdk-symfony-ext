@@ -12,20 +12,19 @@ use Symfony\Component\Security\Core\User\UserProviderInterface;
 use Symfony\Component\Security\Core\User\UserInterface;
 use Symfony\Component\Security\Core\Exception\UsernameNotFoundException;
 use Symfony\Component\Security\Core\Exception\UnsupportedUserException;
-use Tradenity\SDK\Entities\Customer;
+use Tradenity\SDK\Resources\Customer;
 
 class CustomerUserProvider implements UserProviderInterface
 {
     public function loadUserByUsername($username)
     {
 
-        $customer = Customer::findByUsername($username);
+        $customer = Customer::findOneBy(['username' => $username]);
 
         if (! is_null($customer)) {
 
             return new CustomerUser($customer);
         }else {
-
             throw new UsernameNotFoundException(
                 sprintf('Username "%s" does not exist.', $username)
             );

@@ -21,13 +21,18 @@ class CustomerUser implements UserInterface, EquatableInterface
     public function __construct($customer)
     {
         $this->customer = $customer;
-        $this->username = $customer->username;
-        $this->password = $customer->password;
+        $this->username = $customer->getUsername();
+        $this->password = $customer->getPassword();
     }
 
     public function getRoles()
     {
         return $this->roles;
+    }
+
+    public function getCustomer()
+    {
+        return $this->customer;
     }
 
     public function getPassword()

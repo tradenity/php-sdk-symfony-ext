@@ -9,7 +9,7 @@
 
 namespace Tradenity\SDK\Ext\Symfony\Init;
 
-use Tradenity\SDK\TradenityClient;
+use Tradenity\SDK\ApiClient;
 use Tradenity\SDK\Ext\Symfony\Session\SymfonySessionIdAccessor;
 
 class Initializer
@@ -18,7 +18,7 @@ class Initializer
     {
         $service = $container->get("tradenity.session.service");
         if($container->hasParameter('tradenity_key')) {
-            TradenityClient::$key = $container->getParameter('tradenity_key');
+           ApiClient::$ApiKey = $container->getParameter('tradenity_key');
         }else{
             throw new \InvalidArgumentException("No Tradenity API key specified.");
         }
@@ -27,8 +27,8 @@ class Initializer
         }else{
             $endPoint = 'https://api.tradenity.com/v1';
         }
-        TradenityClient::$endPoint = $endPoint;
-        TradenityClient::$sessionIdAccessor = new SymfonySessionIdAccessor($service->getRequestStack());
+        ApiClient::$apiEndPoint = $endPoint;
+        ApiClient::$sessionIdAccessor = new SymfonySessionIdAccessor($service->getRequestStack());
     }
 
 }

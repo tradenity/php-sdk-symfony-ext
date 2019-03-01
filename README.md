@@ -1,6 +1,8 @@
 Welcome to Tradenity Symfony framework SDK extensions.
 ==========
 
+This extension library facilitates integration between Symphony framework based applications and [PHP SDK](https://github.com/tradenity/php-sdk) for [Tradenity ecommerce API](https://www.tradenity.com).
+
 ## Installation
 
 This package is available through Packagist (PHP Package Index), to install it type the following on the command line:
@@ -11,7 +13,7 @@ Or, add this line to your application's composer.json:
 
 ```ruby
 {
-'tradenity/symfony-ext':"0.1.1"
+'tradenity/symfony-ext':"0.5.0"
 }
 ```
 
